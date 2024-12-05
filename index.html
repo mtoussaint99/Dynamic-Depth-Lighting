@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<html lang="en">
+<!--
+<head>
+    <title>Dynamic Depth Lighting</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            background: #f0f0f0;
+        }
+        canvas {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.158.0/three.min.js"></script>
+    <script src="shader.js"></script>
+</body>
+</html>
+-->
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dynamic Depth Lighting</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #a0e9e1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .container {
+      display: grid;
+      grid-template-columns: 1fr 2fr 1fr;
+      gap: 20px;
+      background-color: #fff;
+      border-radius: 10px;
+      padding: 10px;
+      width: 80%;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+    .sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      !-->
+    }
+    .sidebar button {
+      background-color: #d19ad7;
+      color: white;
+      border: none;
+      padding: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    .sidebar button:hover {
+      background-color: #bb82c0;
+    }
+    .viewer {
+      background-color: #ffffff;
+      border: 2px solid #d19ad7;
+      border-radius: 5px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 400px;
+    }
+    .settings {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .settings .group {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .settings label {
+      font-size: 14px;
+      color: #5c4c5d;
+    }
+    .settings input[type="range"] {
+      width: 100%;
+      accent-color: #d19ad7;
+    }
+    .header {
+      grid-column: 1 / 4;
+      text-align: center;
+      font-size: 24px;
+      font-weight: bold;
+      color: #d19ad7;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">Dynamic Depth Lighting</div>
+    <!--
+    <div class="sidebar">
+      <button>Upload File</button>
+      <button>Generate Maps</button>
+      <button>Normal</button>
+      <button>Displacement</button>
+      <button>Specular</button>
+      <button>Ambient Occlusion</button>
+      <button>Download</button>
+    </div>
+    -->
+    <div class="viewer"></div>
+    <div class="settings">
+      <div class="group">
+        <label for="lightheight">Light Height</label>
+        <input type="range" id="lightheight" min="0" max="100" value="50">
+      </div>
+      <div class="group">
+        <label for="intensity">Shadow Intensity</label>
+        <input type="range" id="intensity" min="0" max="100" value="50">
+      </div>
+      <div class="group">
+        <label for="fresnel">Shadow Softness</label>
+        <input type="range" id="fresnel" min="0" max="100" value="50">
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+
